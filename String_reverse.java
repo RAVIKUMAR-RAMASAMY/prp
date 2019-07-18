@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-public class ravi {
+public class String_reverse {
   
     static String rever(String str,int n)
     {
