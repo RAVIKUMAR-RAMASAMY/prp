@@ -34,15 +34,14 @@ public class Wordrev{
 public static void main(String args[])
 {
 Scanner sc=new Scanner(System.in); 
-String instr=sc.nextLine();
-//String instr="Today is a nice day";
-//int inp=43;
-int inp=sc.nextInt();
-int b=inp%10;
-int a=inp/10;
+String input1=sc.nextLine();
 
-String words[]=instr.split(" "); 
-System.out.println(rev(words[a-1])+" "+rev(words[b-1]));
+int input2=sc.nextInt();
+int b=input2%10;
+int a=input2/10;
+
+String words[]=input1.split(" "); 
+return (rev(words[a-1])+" "+rev(words[b-1]));
 
 }
 }
