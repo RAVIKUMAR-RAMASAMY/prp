@@ -2,6 +2,20 @@ import java.util.Scanner;
 public class Wordrev{
   
   
+  
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in); 
+String input1=sc.nextLine();
+
+int input2=sc.nextInt();
+int b=input2%10;
+int a=input2/10;
+
+String words[]=input1.split(" "); 
+return (rev(words[a-1])+" "+rev(words[b-1]));
+
+}
   static String rev(String s)
   {
     int l=s.length();
@@ -31,17 +45,4 @@ public class Wordrev{
     }
     return ans;
   }
-public static void main(String args[])
-{
-Scanner sc=new Scanner(System.in); 
-String input1=sc.nextLine();
-
-int input2=sc.nextInt();
-int b=input2%10;
-int a=input2/10;
-
-String words[]=input1.split(" "); 
-return (rev(words[a-1])+" "+rev(words[b-1]));
-
-}
 }
