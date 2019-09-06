@@ -10,8 +10,14 @@ public class Robot {
     System.out.println("The result is:"+ans);
    }
    
-   public static String mvr(int x,int y, String in3, String in4)
+   public static String mvr(int in1,int in2, String in3, String in4)
    {
+     
+     
+     int x=0;
+     int y=0;
+     x=in1;
+     y=in2;
     int cx=0,cy=0;
     String ans="";
     char dir;
