@@ -10,7 +10,8 @@ public class Robotalldir {
     System.out.println("The result is:"+ans);
    }
    
-   public static String mvr(int in1,int in2, String in3, String in4)
+   public static String mvr(int in1,int 
+   in2, String in3, String in4)
    {
      
      
@@ -32,9 +33,8 @@ public class Robotalldir {
     for(int i=0;i<in4.length();i++)
     {
       char ch=arr[i];
-      switch(ch)
-      {
-        case 'R':
+      if(ch=='R')
+        {
           if(dir.equals("N"))
              dir="E";
           else if(dir.equals("E"))
@@ -51,10 +51,9 @@ public class Robotalldir {
              dir="NE";
           else
              dir="SE";
-          
-          break;
-        
-        case 'L':
+      } 
+     else if(ch=='L')
+        {
         if(dir=="N")
              dir="W";
           else if(dir.equals("W"))
@@ -72,8 +71,9 @@ public class Robotalldir {
           else
              dir="SE";
           
-          break;
-        case 'l':
+      }
+         else if(ch=='l')
+        {
           if(dir.equals("N"))
              dir="NW";
           else if(dir.equals("NW"))
@@ -90,8 +90,9 @@ public class Robotalldir {
              dir="NE";
           else
              dir="N";
-          break;
-        case 'r':
+        }
+        else if(ch=='r')
+        {
            if(dir.equals("N"))
              dir="NE";
           else if(dir.equals("NE"))
@@ -109,76 +110,81 @@ public class Robotalldir {
           else
              dir="N";
           
-          break;
-        case 'M':  
-         
+      }
+        else if(ch=='M' || ch=='m') 
+         {
+             int mm=1;
+             
+           /*  if(ch=='M')            // This set of code is for 2 movement..
+                 mm=2;  */
+             
           if(cx<=x && cy<=y && cx>=0 && cy>=0)
           {
             if(dir.equals("N"))
-              cy++;
+              cy+=mm;
             else if(dir.equals("E"))
-              cx++;
+              cx+=mm;
             else if(dir.equals("S"))
-              cy--;
+              cy-=mm;
             else if(dir.equals("W"))
-              cx--;
+              cx-=mm;
              else if(dir.equals("NW"))
               {
-                cx--;
-                cy++;
+                cx-=mm;
+                cy+=mm;
               }
                else if(dir.equals("SW"))
               {
-                cx--;
-                cy--;
+                cx-=mm;
+                cy-=mm;
               }
                else if(dir.equals("NE"))
-              {
-                cx++;
-                cy++;
+             {
+                cx+=mm;
+                cy+=mm;
               }
               else
               {
-                cx++;
-                cy--;
+                cx+=mm;
+                cy-=mm;
               }
   
           }
            if(cx>x || cy>y || cx<0 || cy<0)
           {
             if(dir.equals("N"))
-              cy--;
+              cy-=mm;
             else if(dir.equals("E"))
-              cx--;
+              cx-=mm;
             else if(dir.equals("S"))
-              cy++;
+              cy+=mm;
             else if(dir.equals("W"))
-              cx++;
+              cx+=mm;
              else if(dir.equals("NW"))
               {
-                cx++;
-                cy--;
+                cx+=mm;
+                cy-=mm;
               }
                else if(dir.equals("SW"))
               {
-                cx++;
-                cy++;
+                cx+=mm;
+                cy+=mm;
               }
                else if(dir.equals("NE"))
               {
-                cx--;
-                cy--;
+                cx-=mm;
+                cy-=mm;
               }
               else
               {
-                cx--;
-                cy++;
+                cx-=mm;
+                cy+=mm;
               }
               
               flag=1;
           }
-          break;
-      }
+         }
+      
       if(flag==1)
       {
         break;
