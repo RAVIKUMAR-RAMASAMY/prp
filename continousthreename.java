@@ -1,37 +1,26 @@
 import java.util.*;
 public class continousthreename {
     public static void main(String[] args) {
-       int n=2;
-       String strarr[]={"aa","bb"};
-       int intarr[]={9,89};
+       int n=3;
+       String strarr[]={"aa","bb","cc"};
+       int intarr[]={7,8,9};
+       String ans="";
+        int st=-1;
        Dictionary dic=new Hashtable();
        for(int i=0;i<n;i++)
        {
          dic.put(intarr[i],strarr[i]);
        }
-       String ans="";
+       
        Arrays.sort(intarr);
-       int st=-1;
-      int  count=1;
-       for(int i=0;i<intarr.length-1;i++)
+      
+       for(int i=0;i<intarr.length-2;i++)
        {
-         if(intarr[i]+1==intarr[i+1])
+         if(intarr[i]+1==intarr[i+1]&&intarr[i]+2==intarr[i+2])
          {
-           if(st==-1)
               st=i;
-              
-           count++;
-           if(count==3)
-           {
-             break;
-           }
+              break;
          }
-           else
-           {
-             st=-1;
-             count=1;
-           }
-         
        }
        
        if(st==-1)
@@ -40,13 +29,11 @@ public class continousthreename {
        }
        else
        {
-         for(int i=st+2;i>=st;i--)
-         {
-           String str1=(String)dic.get(intarr[i]);
-           ans+=str1+":";
+         st=st+2;
+         
+           ans+=(String)dic.get(intarr[st--])+":"+(String)dic.get(intarr[st--])+":"+(String)dic.get(intarr[st--]);
          }
-         ans=ans.substring(0,ans.length()-1);
+         
        }
        
     }
-}
